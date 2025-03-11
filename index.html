@@ -8,9 +8,9 @@
     <title>Frases motivacionales</title>
 </head>
 <body>
-    <div class="main-container">
+    <div class="main-container" id="main-container">
         <div class="container" id="card">
-            <div class="window-shadow"></div>
+            <div class="window-shadow" id="card-shadow"></div>
             <div class="window">
                 <div class="window-top">
                     <div class="window-top-left">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="window-dialog">
-                    <p id="phrasToDisplay" class="window-dialog-phrase">
+                    <p class="window-dialog-phrase" id="quote">
                         Todo lo que necesitas para ser feliz se encuentra al otro lado de tus miedos.
                     </p>
                 </div>
@@ -38,15 +38,12 @@
     
     <footer>
         <div class="footer-buttons">
-            <button class="button-add" title="Agregar frase">
+            <button class="button" title="Agregar frase" id="add-card">
                 <p class="text">+</p>
-            </button>
-            <button class="button-phrase" title="Generar frase random">
-                <i class=" fa fa-trash-o"></i>
             </button>
         </div>
     </footer>
     
-    <script src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>
