@@ -1,0 +1,182 @@
+:root {
+    --mainColor: #F5A5BA;
+    --secondaryColor: #F4619B;
+    --auxColor: #F9C0BB;
+    --yellow: #FCD802;
+    --blue: #CBE8E2;
+    --white: #FFF9EB;
+    
+    --width: 25%;
+    --height: 14rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--mainColor);
+    background-image: linear-gradient(var(--white) 2px, transparent 1px),
+                      linear-gradient(90deg, var(--white) 2px, transparent 1px);
+    background-size: 150px 150px;
+    animation: moveGrid 20s linear infinite;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes moveGrid {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 350px 350px;
+    }
+}
+
+.main-container {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 10rem 0;
+}
+
+.container {
+    width: var(--width);
+    height: var(--height);
+    position: fixed;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window-shadow {
+    position: absolute;
+    background-color: var(--secondaryColor);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    border: 3px solid black;
+    z-index: -1;
+}
+
+.window {
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.window-top {
+    flex: 1;
+    border-bottom: 3px solid black;
+    display: flex;
+    padding: 0.2rem 1.2rem;
+}
+
+.window-top-left {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.window-top-left div {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.window-button--pink {
+    background-color: var(--secondaryColor);
+}
+
+.window-button--blue {
+    background-color: var(--blue);
+}
+
+.window-button--lightPink {
+    background-color: var(--auxColor);
+}
+
+.window-top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    gap: 0.6rem;
+}
+
+.text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.window-dialog {
+    flex: 5;
+    display: flex;
+    padding: 0 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.window-dialog-phrase {
+    font-weight: bolder;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 3;
+}
+
+.footer-buttons {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    gap: 30px;
+}
+
+button:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+button {
+    -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.75);
+    border: 0px solid black;
+    display: flex;
+    border-radius: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    background-color: var(--white);
+    padding: 0 1.5rem;
+}
+
+.button-add {
+    width: 56px;
+}
