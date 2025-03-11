@@ -1,0 +1,52 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Frases motivacionales</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container" id="card">
+            <div class="window-shadow"></div>
+            <div class="window">
+                <div class="window-top">
+                    <div class="window-top-left">
+                        <div class="window-button--pink"></div>
+                        <div class="window-button--lightPink"></div>
+                        <div class="window-button--blue"></div>
+                    </div>
+                    <div class="window-top-right">
+                        <div class="window-button--minus">
+                            <p class="text">—</p>
+                        </div>
+                        <div class="window-button--plus">
+                            <p class="text">+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="window-dialog">
+                    <p id="phrasToDisplay" class="window-dialog-phrase">
+                        Todo lo que necesitas para ser feliz se encuentra al otro lado de tus miedos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-buttons">
+            <button class="button-add" title="Agregar frase">
+                <p class="text">+</p>
+            </button>
+            <button class="button-phrase" title="Generar frase random">
+                <i class=" fa fa-trash-o"></i>
+            </button>
+        </div>
+    </footer>
+    
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
