@@ -1,88 +1,65 @@
+import { cardStructure } from "./structure.js"
+
+
 export const Card = () => {
 
-    const cardProps = {
-        phrase: "",
-        color: "",
-        cardPosition: {
-            startX: 0,
-            startY: 0,
-        },
-        elementDOM: null
-    }
+    let counter = 0
 
-    const cardMethods = {
+    const movementdMethods = {
 
-        newX: 0,
-        newY: 0,
+        mouseDown(e) {
+            const card = e.target.closest(".container")
+            if (!card) return
 
+            card.dataset.startX = e.clientX
+            card.dataset.startY = e.clientY
 
-        mouseDown( e ) {
-            cardProps.cardPosition.startX = e.clientX
-            cardProps.cardPosition.startY = e.clientY
-
-            // document.addEventListener('mousemove', mouseMove)
-            // document.addEventListener('mouseup', mouseUp)
+            document.addEventListener("mousemove", this.mouseMove)
+            document.addEventListener("mouseup", this.mouseUp)
         },
 
-        mouseMove( e ) {
-            this.newX = cardProps.cardPosition.startX - e.clientX
-            this.newY = cardProps.cardPosition.startY - e.clientY
+        mouseMove(e) {
+            const card = document.querySelector(".container.moving")
+            if (!card) return
 
-            cardProps.cardPosition.startX = e.clientX
-            cardProps.cardPosition.startY = e.clientY
-            
-            // card.style.top = ( card.offsetTop - newY ) + 'px'
-            // card.style.left = ( card.offsetLeft - newX ) + 'px'
-            
-        }, 
+            const newX = card.dataset.startX - e.clientX
+            const newY = card.dataset.startY - e.clientY
 
-        mouseUp( e ) {
-            // document.removeEventListener('mousemove', mouseMove)
+            card.dataset.startX = e.clientX
+            card.dataset.startY = e.clientY
+
+            card.style.position = "absolute"
+            card.style.top = `${card.offsetTop - newY}px`
+            card.style.left = `${card.offsetLeft - newX}px`
+
+        },
+
+        mouseUp(e) {
+            const card = document.querySelector(".container.moving")
+            if (card) card.classList.remove("moving")
+            document.removeEventListener("mousemove", this.mouseMove)
+            document.removeEventListener("mouseup", this.mouseUp)
         }
     }
-    
+
     return {
-        createCard( card ) {
-            
+        createCard(card) {
+            console.log("creada")
+            const newCardStructure = cardStructure()
+            newCardStructure.setBackGroundColor(card.color)
+            newCardStructure.setQuote(card.phrase)
+
+            const cardElement = newCardStructure.container
+            cardElement.addEventListener("mousedown", function (e) {
+                cardElement.classList.add("moving")
+                movementdMethods.mouseDown(e)
+            })
+
+            counter++
+            return cardElement
         },
-        moveCard( cardElement ) {
-        },
-        printLog() {
-            alert("LOG")
-        },
-        deleteCard() {}
+        getCounter() {
+            return counter
+        }
     }
 }
-
-/**
- * 
- * <div class="main-container">
-        <div class="container" id="card">
-            <div class="window-shadow" id="card-shadow"></div>
-            <div class="window">
-                <div class="window-top">
-                    <div class="window-top-left">
-                        <div class="window-button--pink"></div>
-                        <div class="window-button--lightPink"></div>
-                        <div class="window-button--blue"></div>
-                    </div>
-                    <div class="window-top-right">
-                        <div class="window-button--minus">
-                            <p class="text">—</p>
-                        </div>
-                        <div class="window-button--plus">
-                            <p class="text">+</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="window-dialog">
-                    <p id="phrasToDisplay" class="window-dialog-phrase" id="quote">
-                        Todo lo que necesitas para ser feliz se encuentra al otro lado de tus miedos.
-                    </p>
-                </div>
-            </div>
-        </div>
- * 
- * 
- * 
- */
