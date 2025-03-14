@@ -43,11 +43,12 @@ export const Card = () => {
     }
 
     return {
-        createCard(card) {
+        async createCard(card) {
             console.log("creada")
+            const phrase = await card.phrase
             const newCardStructure = cardStructure()
             newCardStructure.setBackGroundColor(card.color)
-            newCardStructure.setQuote(card.phrase)
+            newCardStructure.setQuote(phrase)
 
             const cardElement = newCardStructure.container
             cardElement.addEventListener("mousedown", function (e) {

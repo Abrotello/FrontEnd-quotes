@@ -11,31 +11,21 @@ export const cardService = () => {
         "#703440"  // Terracota vino
     ]
 
-    const quotes = [
-        "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
-        "No tengas miedo de renunciar a lo bueno para perseguir lo grandioso.",
-        "Cada día es una nueva oportunidad para cambiar tu vida.",
-        "No cuentes los días, haz que los días cuenten.",
-        "El único límite a tu impacto es tu imaginación y compromiso.",
-        "La disciplina es el puente entre metas y logros.",
-        "Si puedes soñarlo, puedes lograrlo.",
-        "El fracaso es solo la oportunidad de empezar de nuevo con más inteligencia.",
-        "Lo imposible es solo una opinión.",
-        "La constancia supera al talento cuando el talento no se esfuerza."
-    ];
-
     function generateRandomColor() {
         return colors[Math.floor(Math.random() * colors.length)]
     }
 
-    function generateRandomPhrase() {
+    async function generateRandomPhrase() {
 
-        /**
-         * 
-         * HACER LA COENXION A LA API
-         *  
-         */
-        return quotes[Math.floor(Math.random() * quotes.length)]
+        try {
+            const response = await fetch('http://localhost:3000/api/phrases/random', {
+                method: 'GET'
+            })
+            const data = await response.json()
+            return data
+        } catch( error) {
+            console.log("Error: ", error.message || error)
+        }
     }
 
     function generateRandomPosition() {

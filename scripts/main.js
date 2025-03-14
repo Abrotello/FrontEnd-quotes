@@ -9,10 +9,10 @@ if (!button) {
     alert("Error, intentar nuevamente") 
 } else {
     const mainContainer = document.getElementById("main-container")
-    button.onclick = () => {
-        if(card.getCounter() < 5) {
+    button.onclick = async() => {
+        if(card.getCounter() < 6) {
             const cardData = cardService()
-            const newCard = card.createCard( cardData )
+            const newCard = await card.createCard( cardData )
             mainContainer.appendChild(newCard)
         } else {
             alert("Ya no es posible generar mas ventanas")
