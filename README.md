@@ -1,4 +1,4 @@
-# ✨ ZenQuotes Fetcher
+# ✨ Quotes
 
 Una mini aplicación hecha con **HTML, CSS y JavaScript puro** (Vanilla JS) que muestra frases motivacionales obtenidas desde la API de [ZenQuotes.io](https://zenquotes.io). Utiliza el proxy público `AllOrigins` para evitar problemas de CORS, y está 100% libre de dependencias externas.
 
