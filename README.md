@@ -6,7 +6,7 @@ Una mini aplicación hecha con **HTML, CSS y JavaScript puro** (Vanilla JS) que 
 
 ## 🔗 Demo en vivo
 
-👉 [Ver en GitHub Pages](https://adriancafe.github.io/zenquotes-vanilla/)
+👉 [Ver en GitHub Pages](https://abrotello.github.io/FrontEnd-quotes/)
 
 ---
 
