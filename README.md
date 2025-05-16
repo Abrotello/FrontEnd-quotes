@@ -32,5 +32,5 @@ Puedes clonarlo y correrlo en tu máquina local con cualquier navegador moderno.
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/adriancafe/zenquotes-vanilla.git
-cd zenquotes-vanilla
+git clone https://github.com/Abrotello/FrontEnd-quotes.git
+cd FrontEnd-quotes
