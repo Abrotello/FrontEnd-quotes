@@ -18,7 +18,7 @@ Una mini aplicación hecha con **HTML, CSS y JavaScript puro** (Vanilla JS) que 
 
 ## 🚀 Características
 
-- Interfaz simple y responsiva
+- Interfaz simple. No responsiva!!
 - Frases motivacionales aleatorias con autor
 - 100% Vanilla JS, sin frameworks ni librerías externas
 - Consulta externa a API usando proxy con CORS habilitado
