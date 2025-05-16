@@ -1,6 +1,6 @@
 # ✨ Quotes
 
-Una mini aplicación hecha con **HTML, CSS y JavaScript puro** (Vanilla JS) que muestra frases motivacionales obtenidas desde la API de [ZenQuotes.io](https://zenquotes.io). Utiliza el proxy público `AllOrigins` para evitar problemas de CORS, y está 100% libre de dependencias externas.
+Una mini aplicación hecha con **HTML, CSS y JavaScript** que muestra frases motivacionales obtenidas desde la API de [ZenQuotes.io](https://zenquotes.io). Utiliza el proxy público `AllOrigins` para evitar problemas de CORS, y está 100% libre de dependencias externas.
 
 ---
 
@@ -19,7 +19,7 @@ Una mini aplicación hecha con **HTML, CSS y JavaScript puro** (Vanilla JS) que 
 ## 🚀 Características
 
 - Interfaz simple. No responsiva!!
-- Frases motivacionales aleatorias con autor
+- Frases motivacionales aleatorias
 - 100% Vanilla JS, sin frameworks ni librerías externas
 - Consulta externa a API usando proxy con CORS habilitado
 
