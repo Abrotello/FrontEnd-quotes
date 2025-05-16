@@ -15,18 +15,26 @@ export const cardService = () => {
         return colors[Math.floor(Math.random() * colors.length)]
     }
 
-    async function generateRandomPhrase() {
+async function generateRandomPhrase() {
+    try {
+        const proxyUrl = 'https://api.allorigins.win/get?url=';
+        const targetUrl = encodeURIComponent('https://zenquotes.io/api/quotes/');
+        const response = await fetch(`${proxyUrl}${targetUrl}`);
 
-        try {
-            const response = await fetch('http://localhost:3000/api/phrases/random', {
-                method: 'GET'
-            })
-            const data = await response.json()
-            return data
-        } catch( error) {
-            console.log("Error: ", error.message || error)
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del proxy');
         }
+
+        const data = await response.json();
+        const quotes = JSON.parse(data.contents);
+
+        const random = quotes[Math.floor(Math.random() * quotes.length)];
+        return random.q
+
+    } catch (error) {
+        console.error('Error al obtener la frase:', error);
     }
+}
 
     function generateRandomPosition() {
         const cardWidth = window.innerWidth * 0.25
